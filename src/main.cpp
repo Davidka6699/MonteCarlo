@@ -44,7 +44,7 @@ std::function<double(double)> chooseFunction(int& chosenFuncIndex, bool& isCusto
         std::string expression_string;
         std::cout << "Enter your custom function in terms of x (e.g., x^2 + 3*x): ";
         std::cin >> expression_string;
-
+/////////////////
         exprtk::symbol_table<double> symbol_table;
         symbol_table.add_variable("x", x);
         symbol_table.add_constants();
@@ -60,7 +60,7 @@ std::function<double(double)> chooseFunction(int& chosenFuncIndex, bool& isCusto
         return [&expression, &x](double input) -> double {
             x = input;
             return expression.value();
-        };
+        };////////////////
     }
 
     switch (chosenFuncIndex) {
